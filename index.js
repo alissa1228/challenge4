@@ -10,7 +10,7 @@ function handleChange(event) {
   saveData();
 }
 
-function saveData(value) {
+function saveData() {
   const savedData = localStorage.getItem("select");
   //option에서 가져와 저장
   if (!savedData) {
