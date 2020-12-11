@@ -1,4 +1,5 @@
 const select = document.querySelector("select");
+const from =document.querySelector(".from");
 //const options = select.querySelector("option");
 const countryName = "country";
 
@@ -12,12 +13,15 @@ function handleChange(event) {
 
 function saveData() {
   const savedData = localStorage.getItem("select");
-  //option에서 가져와 저장
-  if (!savedData) {
-    //저장 데이터 없으면 가져와서 집어넣기
-    select.value = savedData;
+  if(savedData){
+    const option = document.querySelector(`option[value="${savedData}"]`);
+    option.savedData = true;
   }
+
 }
+
+
+  
 
 function init() {
   saveData(); //localstorage
